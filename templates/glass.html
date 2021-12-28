@@ -5,6 +5,9 @@
 	<title>MSFS2020 Cockpit Companion</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<!-- Bootstrap Toggle-->
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+	
 	<!-- Bootstrap CSS-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<!-- Range Slider CSS-->
@@ -72,6 +75,7 @@
 
 <body>
 
+<!--Main container-->
 <div class="container-fluid p-0" style="height: 100%; width: 100%;">  <!--Main container-->
 
 	<!-- NAVBAR -->
@@ -184,10 +188,11 @@
 									</div>
 								</div>
 							</div>
-
+							<button onclick="triggerSimEvent('LANDING_LIGHTS_TOGGLE')" id="landing-lights-toggle type="button" class="btn mt-3 btn-block btn-danger btn-lg">Toggle Landing Lights</button>
 						</div>
 					</div>
 				</div>
+
 
 				<!-- FUEL -->
 				<div class="card">
@@ -249,6 +254,7 @@
 											<button onclick="triggerSimEvent('CABIN_SEATBELTS_ALERT_SWITCH_TOGGLE')" id="seatbelt-sign" type="button" class="btn mt-1 btn-block btn-outline-danger btn-lg">Seatbelt sign ?</button>
 											<button onclick="triggerSimEvent('CABIN_NO_SMOKING_ALERT_SWITCH_TOGGLE')" id="no-smoking-sign" type="button" class="btn mt-1 btn-block btn-outline-danger btn-lg">No smoking sign ?</button>
 											<button onclick="temporaryAlert('', 'Cabin crew please contact cockpit', 'success')" id="cabin-crew-contact" type="button" class="btn mt-5 btn-block btn-primary btn-lg">Cabin crew chime</button>
+											<input id="tempcb" type="checkbox" checked class="mt-5">
 										</div>
 									</div>
 								</div>
@@ -482,7 +488,6 @@
 			</div>
 		</div>
 	</div>
-
 </div>  <!--Main container-->
 
 <!-- Create map object -->
