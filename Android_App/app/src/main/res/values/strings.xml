@@ -2,4 +2,6 @@
     <string name="app_name">MSFS2020_Cockpit_Extension_App</string>
     <string name="tab_text_1">Electrical</string>
     <string name="tab_text_2">PFD</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

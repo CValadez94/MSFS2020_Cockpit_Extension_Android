@@ -47,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     FragmentAdapter fragmentAdapter;
-    private TriggerEvent triggerValue = new TriggerEvent();     // Default value is 1
     private final OkHttpClient client = new OkHttpClient();
+    RequestBody requestBody;
+    MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,22 +96,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Send a POST to the flask server
-    private void postToFlaskServer(String file) throws Exception {
-        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-        String url = "http://192.168.50.39:5000/event/LANDING_LIGHTS_TOGGLE/trigger";
-        String json = "{\"value_to_use\":\"1\"}";
+    // TODO: receive json req as parametr
+    // TODO: return json resonse if applicable
+    private void postToFlaskServer(String reqURL, String json) throws Exception {
+        String url = "http://192.168.50.39:5000/" + reqURL;
         byte[] postData = json.getBytes(StandardCharsets.UTF_8);
 
-
-
-        RequestBody requestBody = RequestBody.create(new byte[0], null);
         requestBody = RequestBody.create(json, JSON);
-
         Request request = new Request.Builder()
                 .url(url)
                 .post(requestBody)
                 .build();
-
 
         client.newCall(request).enqueue(new Callback() {
             @Override
@@ -136,37 +132,48 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toggleLandingLights(View view) {
-        System.out.println("Button Pressed!");
-        Snackbar.make(findViewById(R.id.view_pager2), "Button Pressed!", Snackbar.LENGTH_SHORT)
-                .show();
-
         try {
-            postToFlaskServer("/event/LANDING_LIGHTS_TOGGLE/trigger");
+            postToFlaskServer("/event/LANDING_LIGHTS_TOGGLE/trigger", "{\"value_to_use\":\"1\"}");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Exception caught.");
         }
     }
 
-    class TriggerEvent {
-        private int value;
-
-        // Constructors
-        public TriggerEvent(int value) {
-            this.value = value;
+    public void toggleMasterAlternator(View view) {
+        try {
+            postToFlaskServer("/event/TOGGLE_MASTER_ALTERNATOR/trigger", "{\"value_to_use\":\"0\"}");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Exception caught.");
         }
+    }
 
-        // No param will default to value 1
-        public TriggerEvent() {
-            this(1);
+    public void toggleMasterBattery(View view) {
+        try {
+            postToFlaskServer("/event/TOGGLE_MASTER_BATTERY/trigger", "{\"value_to_use\":\"1\"}");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Exception caught.");
         }
+    }
 
-        public int getValue() {
-            return value;
+    public void toggleAvionicsBus1(View view) {
+        try {
+            postToFlaskServer("/event/AVIONICS_MASTER_1_ON/trigger", "{\"value_to_use\":\"1\"}");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Exception caught.");
         }
+    }
 
-        public void setValue(int value) {
-            this.value = value;
+    public void toggleAvionicsBus2(View view) {
+
+        try {
+            postToFlaskServer("/event/AVIONICS_MASTER_2_ON/trigger", "{\"value_to_use\":\"1\"}");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Exception caught.");
         }
     }
 }

@@ -6,13 +6,134 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnMasterAltToggle"
+        android:theme="@style/RedButton"
+        android:layout_width="48dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="toggleMasterAlternator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSync" />
+
+    <Button
+        android:id="@+id/btnMasterBatToggle"
+        android:theme="@style/RedButton"
+        android:layout_width="48dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="toggleMasterBattery"
+        app:layout_constraintStart_toEndOf="@id/btnMasterAltToggle"
+        app:layout_constraintTop_toBottomOf="@id/btnSync" />
+
+    <Button
+        android:id="@+id/btnAvionicsBus1"
+        android:theme="@style/WhiteButton"
+        android:layout_width="48dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="8dp"
+        android:onClick="toggleAvionicsBus1"
+        app:layout_constraintStart_toEndOf="@id/btnMasterBatToggle"
+        app:layout_constraintTop_toBottomOf="@id/btnSync" />
+
+    <Button
+        android:id="@+id/btnAvionicsBus2"
+        android:theme="@style/WhiteButton"
+        android:layout_width="48dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="toggleAvionicsBus2"
+        app:layout_constraintStart_toEndOf="@id/btnAvionicsBus1"
+        app:layout_constraintTop_toBottomOf="@id/btnSync" />
+
+    <Button
+        android:id="@+id/btnLandingLightsToggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:onClick="toggleLandingLights"
         android:text="Landing Lights"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/btnMasterAltToggle" />
+
+    <ImageButton
+        android:id="@+id/btnSync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/stat_notify_sync" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="MASTER"
+        app:layout_constraintBottom_toTopOf="@id/tvALT"
+        app:layout_constraintEnd_toEndOf="@id/btnMasterBatToggle"
+        app:layout_constraintStart_toStartOf="@id/btnMasterAltToggle" />
+
+    <TextView
+        android:id="@+id/tvALT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="ALT"
+        app:layout_constraintBottom_toTopOf="@id/btnMasterAltToggle"
+        app:layout_constraintEnd_toEndOf="@id/btnMasterAltToggle"
+        app:layout_constraintStart_toStartOf="@id/btnMasterAltToggle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="BAT"
+        app:layout_constraintBottom_toTopOf="@id/btnMasterBatToggle"
+        app:layout_constraintEnd_toEndOf="@id/btnMasterBatToggle"
+        app:layout_constraintStart_toStartOf="@id/btnMasterBatToggle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="AVIONICS"
+        app:layout_constraintBottom_toTopOf="@id/tvBus1"
+        app:layout_constraintEnd_toEndOf="@id/btnAvionicsBus2"
+        app:layout_constraintStart_toStartOf="@id/btnAvionicsBus1" />
+
+    <TextView
+        android:id="@+id/tvBus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="BUS1"
+        app:layout_constraintBottom_toTopOf="@id/btnAvionicsBus1"
+        app:layout_constraintEnd_toEndOf="@id/btnAvionicsBus1"
+        app:layout_constraintStart_toStartOf="@id/btnAvionicsBus1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="BUS2"
+        app:layout_constraintBottom_toTopOf="@id/btnAvionicsBus2"
+        app:layout_constraintEnd_toEndOf="@id/btnAvionicsBus2"
+        app:layout_constraintStart_toStartOf="@id/btnAvionicsBus2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ON"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="@id/btnMasterBatToggle"
+        app:layout_constraintStart_toEndOf="@id/btnMasterBatToggle"
+        app:layout_constraintEnd_toStartOf="@id/btnAvionicsBus1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

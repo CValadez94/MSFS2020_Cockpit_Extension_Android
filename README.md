@@ -1,20 +1,18 @@
-# MSFS-2020 Cockpit Companion
+# MSFS-2020 Cockpit Expansion
 
-HTTP interface to view and control aircraft location and systems in Microsoft Flight Simulator 2020 (MSFS2020).
 
-![Map](https://msfs2020.cc/Autopilot.png)
+Android app interface to view and control aircraft cockpit controls in Microsoft Flight Simulator 2020 (MSFS2020). A flask server runs locally on port 5000 as a REST API in JSON format.
 
-Full functionality explained at [https://msfs2020.cc](https://msfs2020.cc).
-
-Cockpit Companion is based on the [Python-SimConnect](https://github.com/odwdinc/Python-SimConnect) library which provides a python wrapper for SimConnect.
-
-Cockpit Companion provides a flask server running locally on port 5000 to deliver either a user interface with a moving map and aircraft systems, or JSON output.
+Based on:
+- [Cockpit Companion](https://github.com/hankhank10/MSFS2020-cockpit-companion)
+- [Python-SimConnect](https://github.com/odwdinc/Python-SimConnect) library which provides a python wrapper for SimConnect.
 
 ## Requirements
 
 - [Python 3+](https://www.python.org/downloads/windows/)
 - [Flask](https://github.com/pallets/flask)
 - [Python-SimConnect](https://github.com/odwdinc/Python-SimConnect)
+- *TODO: Add Android app requirements*
 
 ## Installation
 
@@ -22,10 +20,14 @@ Cockpit Companion provides a flask server running locally on port 5000 to delive
 - Open a Windows command prompt by clicking on the start menu and typing `cmd`
 - At the Windows command prompt (you can get one of those by going to the start menu and typing "cmd") install Flask: `pip install -U Flask`
 - Install Python-SimConnect: `pip install SimConnect`
-- Download this repo into a fresh directory (eg `c:\MSFS2020-CC`) either by cloning from github or downloading a zip
+- Download this repo into a fresh directory either by cloning from github or downloading a zip
+
+## How to Run
+
 - Ensure that MSFS2020 is running and that you are in an aircraft on a runway
 - Navigate to the directory you installed the repo to and run the program with `python glass_server.py`
-- Point Chrome or Firefox (not Internet Explore or Edge) to [http://localhost:5000/](http://localhost:5000/)
+- Run the Android app
+- *TODO: Will need to add instructions for user to input ip of the local host running the python script
 
 
 ## API documentation

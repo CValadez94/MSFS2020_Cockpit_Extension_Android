@@ -22,4 +22,14 @@
     <style name="Theme.MSFS2020_Cockpit_Extension_App.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.MSFS2020_Cockpit_Extension_App.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="RedButton" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@android:color/holo_red_light</item>
+        <item name="colorControlHighlight">@android:color/holo_red_dark</item>
+    </style>
+
+    <style name="WhiteButton" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@android:color/white</item>
+        <item name="colorControlHighlight">@android:color/darker_gray</item>
+    </style>
 </resources>
