@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, render_template, request
-from SimConnect import *
+from SimConnectExpansion import *
 from time import sleep
 import random
 
@@ -9,7 +9,7 @@ app = Flask(__name__)
 # SIMCONNECTION RELATED STARTUPS
 
 # Create simconnection
-sm = SimConnect()
+sm = SimConnectExpansion()
 ae = AircraftEvents(sm)
 aq = AircraftRequests(sm, _time=10)
 

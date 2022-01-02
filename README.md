@@ -11,16 +11,16 @@ Based on:
 
 - [Python 3+](https://www.python.org/downloads/windows/)
 - [Flask](https://github.com/pallets/flask)
-- [Python-SimConnect](https://github.com/odwdinc/Python-SimConnect)
+- [Python-SimConnect-Expansion](https://github.com/CValadez94/Python-SimConnect-Expansion.git)
 - *TODO: Add Android app requirements*
 
 ## Installation
 
 - Download and install a 64 bit version of [Python 3+ for Windows](https://www.python.org/downloads/windows/)
 - Open a Windows command prompt by clicking on the start menu and typing `cmd`
-- At the Windows command prompt (you can get one of those by going to the start menu and typing "cmd") install Flask: `pip install -U Flask`
-- Install Python-SimConnect: `pip install SimConnect`
-- Download this repo into a fresh directory either by cloning from github or downloading a zip
+- Install Flask: `pip install -U Flask`
+- Install Python-SimConnect-Expansion: `pip install <download_path>\Python-SimConnect-Expansion`
+- *TODO: Add Android app installation steps
 
 ## How to Run
 
@@ -92,6 +92,8 @@ Description: Triggers an event in the simulator
 ## Events and Variables
 
 Below are links to the Microsoft documentation 
+
+[Microsoft Simulator SDK Documentation](https://docs.flightsimulator.com/html/index.htm?#t=Introduction%2FIntroduction.htm)
 
 [Event IDs](https://docs.microsoft.com/en-us/previous-versions/microsoft-esp/cc526980(v=msdn.10))
 
