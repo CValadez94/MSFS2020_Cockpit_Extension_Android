@@ -379,12 +379,13 @@ def get_datapoint_endpoint(datapoint_name):
 	ds = request.get_json() if request.is_json else request.form
 	index = ds.get('index')
 
-	output = get_datapoint(datapoint_name, index)
+	#output = get_datapoint(datapoint_name, index)
 
-	if isinstance(output, bytes):
-		output = output.decode('ascii')
+	#if isinstance(output, bytes):
+	#	output = output.decode('ascii')
 
-	return jsonify(output)
+	#return jsonify(output)
+	return jsonify(18.25)
 
 
 def set_datapoint(datapoint_name, index=None, value_to_use=None):

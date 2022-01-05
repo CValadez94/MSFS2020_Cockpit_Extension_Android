@@ -1,30 +1,14 @@
 package com.example.msfs2020_cockpit_extension_app;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.ToggleButton;
 
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
-
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Headers;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import okhttp3.ResponseBody;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     FragmentAdapter fragmentAdapter;
+    private SimVarViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,5 +60,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         viewPager2.setUserInputEnabled(false);          // Disable the swiping feature
+
     }
 }

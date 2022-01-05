@@ -23,7 +23,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
             case 0:
                 return new ElectricalFrag();
             case 1:
-                return new PFDFrag();
+                return new Monitor();
         }
         return new ElectricalFrag();
     }
