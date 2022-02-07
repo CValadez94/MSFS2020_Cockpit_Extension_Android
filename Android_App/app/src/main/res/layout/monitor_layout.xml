@@ -5,14 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <View
+        android:id="@+id/div1"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/rightFuelPB" />
+
+    <View
+        android:id="@+id/div"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/elevatorTrim" />
+
     <TextView
         android:id="@+id/leftFuel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="100 / 100"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="16dp"
+        android:text="20 / 20"
+        app:layout_constraintEnd_toStartOf="@+id/leftFuelPercent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/barrierFuel"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
@@ -28,10 +48,11 @@
         android:id="@+id/leftFuelPercent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@id/leftFuelPB"
-        app:layout_constraintTop_toTopOf="@id/leftFuel" />
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="100%"
+        app:layout_constraintEnd_toStartOf="@+id/leftFuelPB"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/rightFuel"
@@ -39,8 +60,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="16dp"
+        android:text="20 / 20"
+        app:layout_constraintEnd_toStartOf="@+id/rightFuelPercent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/barrierFuel"
         app:layout_constraintTop_toBottomOf="@id/leftFuel" />
 
     <ProgressBar
@@ -57,27 +81,94 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="16dp"
-        android:text="TextView"
+        android:text="100%"
         app:layout_constraintEnd_toStartOf="@id/rightFuelPB"
         app:layout_constraintTop_toTopOf="@id/rightFuel" />
 
-    <ImageButton
-        android:id="@+id/btnSync"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@android:drawable/ic_popup_sync" />
-
-    <Button
-        android:id="@+id/btnPull"
+    <TextView
+        android:id="@+id/lblLeftFuel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="16dp"
-        android:text="Pull"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnSync" />
+        android:layout_marginTop="8dp"
+        android:text="Left Fuel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblRightFuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Right Fuel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblLeftFuel" />
+
+    <TextView
+        android:id="@+id/lblElevatorTrim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Elevator Trim"
+        app:layout_constraintEnd_toStartOf="@+id/lblAileronTrim"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+    <TextView
+        android:id="@+id/lblAileronTrim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aileron Trim"
+        app:layout_constraintEnd_toStartOf="@+id/lblRudderTrim"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lblElevatorTrim"
+        app:layout_constraintTop_toTopOf="@+id/lblElevatorTrim" />
+
+    <TextView
+        android:id="@+id/lblRudderTrim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rudder Trim"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lblAileronTrim"
+        app:layout_constraintTop_toTopOf="@+id/lblAileronTrim" />
+
+    <TextView
+        android:id="@+id/elevatorTrim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0.0%"
+        app:layout_constraintEnd_toEndOf="@+id/lblElevatorTrim"
+        app:layout_constraintStart_toStartOf="@+id/lblElevatorTrim"
+        app:layout_constraintTop_toBottomOf="@+id/lblElevatorTrim" />
+
+    <TextView
+        android:id="@+id/aileronTrim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0%"
+        app:layout_constraintEnd_toEndOf="@+id/lblAileronTrim"
+        app:layout_constraintStart_toStartOf="@+id/lblAileronTrim"
+        app:layout_constraintTop_toTopOf="@+id/elevatorTrim" />
+
+    <TextView
+        android:id="@+id/rudderTrim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0%"
+        app:layout_constraintEnd_toEndOf="@+id/lblRudderTrim"
+        app:layout_constraintStart_toStartOf="@+id/lblRudderTrim"
+        app:layout_constraintTop_toTopOf="@+id/aileronTrim" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierFuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="lblLeftFuel,lblRightFuel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

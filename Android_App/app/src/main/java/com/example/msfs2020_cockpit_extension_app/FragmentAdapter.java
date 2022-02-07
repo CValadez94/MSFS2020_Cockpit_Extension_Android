@@ -21,15 +21,17 @@ public class FragmentAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                return new ElectricalFrag();
+                return new ElectricalFragment();
             case 1:
-                return new Monitor();
+                return new MonitorFragment();
+            case 2:
+                return new AutopilotFragment();
         }
-        return new ElectricalFrag();
+        return new ElectricalFragment();
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 }

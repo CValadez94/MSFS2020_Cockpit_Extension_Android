@@ -6,8 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -34,10 +32,9 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
-import com.example.msfs2020_cockpit_extension_app.SimVarEnums.FuelVars;
-import com.example.msfs2020_cockpit_extension_app.SimVarEnums.VarCategories;
+import com.example.msfs2020_cockpit_extension_app.SimVarEnums.*;
 
-public class Monitor extends Fragment {
+public class MonitorFragment extends Fragment {
     private String TAG = "MONITOR";
     public HashMap<String, String> dataSet = new HashMap<>();
     private final OkHttpClient client = new OkHttpClient();
@@ -45,10 +42,11 @@ public class Monitor extends Fragment {
     private MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     private String baseUrl = "http://192.168.50.39:5000/";
     TextView leftFuelPercent, leftFuel, rightFuelPercent, rightFuel;
+    TextView elevatorTrim, aileronTrim, rudderTrim;
     ProgressBar leftFuelPB, rightFuelPB;
     private SimVarViewModel mViewModel;
-    Timer timer;
-    TimerTask timerTask;
+    Timer fuelTimer, trimTimer;
+    TimerTask fuelTimerTask, trimTimerTask;
     private int fuelVarTimerPeriod = 5000;
     private int trimVarTimerPeriod = 1000;
 
@@ -65,14 +63,22 @@ public class Monitor extends Fragment {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onChanged(HashMap<String, String> simFuelVars) {
-                Log.d(TAG, "sim variables have changed");
-                update(simFuelVars);
+                Log.d(TAG, "sim fuel variables have changed");
+                updateFuelVars(simFuelVars);
             }
         };
-        mViewModel.getFuelVars().observe(getViewLifecycleOwner(), simFuelVarsObserver);
+        final Observer<HashMap<String, String>> simTrimVarsObserver = new Observer<HashMap<String, String>>() {
+            @Override
+            public void onChanged(HashMap<String, String> simTrimVars) {
+                Log.d(TAG, "sim trim varialbes have changed");
+                updateTrimVars(simTrimVars);
+            }
+        };
 
-        ImageButton sync = v.findViewById(R.id.btnSync);
-        Button pull = v.findViewById(R.id.btnPull);
+        mViewModel.getFuelVars().observe(getViewLifecycleOwner(), simFuelVarsObserver);
+        mViewModel.getTrimVars().observe(getViewLifecycleOwner(), simTrimVarsObserver);
+
+        // Get the UI objects
         leftFuelPercent = v.findViewById(R.id.leftFuelPercent);
         leftFuel = v.findViewById(R.id.leftFuel);
         rightFuelPercent = v.findViewById(R.id.rightFuelPercent);
@@ -80,24 +86,9 @@ public class Monitor extends Fragment {
         leftFuelPB = v.findViewById(R.id.leftFuelPB);
         rightFuelPB = v.findViewById(R.id.rightFuelPB);
 
-        sync.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void onClick(View view) {
-                //update();
-            }
-        });
-        pull.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                for (FuelVars var : FuelVars.values()) {
-                    pull(var.name(), VarCategories.FUEL);
-                }
-            }
-        });
-
-
-        //timer.schedule(timerTask, 0, 2000);
+        elevatorTrim = v.findViewById(R.id.elevatorTrim);
+        aileronTrim = v.findViewById(R.id.aileronTrim);
+        rudderTrim = v.findViewById(R.id.rudderTrim);
 
         return v;
     }
@@ -107,8 +98,8 @@ public class Monitor extends Fragment {
     public void onResume() {
         super.onResume();
 
-        // Setup timer
-        timerTask = new TimerTask() {
+        // Setup timers
+        fuelTimerTask = new TimerTask() {
             @Override
             public void run() {
                 for (FuelVars var : FuelVars.values()) {
@@ -116,8 +107,18 @@ public class Monitor extends Fragment {
                 }
             }
         };
-        timer = new Timer();
-        timer.schedule(timerTask, 0, fuelVarTimerPeriod);
+        trimTimerTask = new TimerTask() {
+            @Override
+            public void run() {
+                for (TrimVars var : TrimVars.values()) {
+                    pull(var.name(), VarCategories.TRIM);
+                }
+            }
+        };
+        fuelTimer = new Timer();
+        trimTimer = new Timer();
+        fuelTimer.schedule(fuelTimerTask, 0, fuelVarTimerPeriod);
+        trimTimer.schedule(trimTimerTask, 0, trimVarTimerPeriod);
         Log.d(TAG, "Timers started");
     }
 
@@ -125,7 +126,9 @@ public class Monitor extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        timer.cancel();
+
+        fuelTimer.cancel();
+        trimTimer.cancel();
         Log.d(TAG, "Timers cancelled");
 
         Log.d(TAG, "Cancelling " + client.dispatcher().queuedCallsCount() + " queued calls");
@@ -158,39 +161,70 @@ public class Monitor extends Fragment {
                     if (!response.isSuccessful()) throw new IOException(("Unexpected code " + response));
                     String res = responseBody.string();
 
-                    // Update the model
-                    mViewModel.putValue(dataPoint, res, category);
+                    // Update the model, ignore if response is "null"
+                    if (!res.equalsIgnoreCase("null")) mViewModel.putValue(dataPoint, res, category);
                 }
             }
         });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void update(HashMap<String, String> map) {
-        if (map.isEmpty()) {
-            Log.d(TAG, "Map is emtpy");
-        } else {
-            Log.d(TAG, String.valueOf(map.size()));
-            Log.d(TAG, String.valueOf(map.values()));
+    public void updateFuelVars(HashMap<String, String> map) {
+        String sLeftQuant = map.get(FuelVars.FUEL_LEFT_QUANTITY.name());
+        String sLeftCap = map.get(FuelVars.FUEL_LEFT_CAPACITY.name());
+        String sRightQuant = map.get(FuelVars.FUEL_RIGHT_QUANTITY.name());
+        String sRightCap = map.get(FuelVars.FUEL_RIGHT_CAPACITY.name());
 
-            float leftQuant = Float.parseFloat(Objects.requireNonNull(map.get("FUEL_LEFT_QUANTITY")));
-            float leftCap = Float.parseFloat(Objects.requireNonNull(map.get("FUEL_LEFT_CAPACITY")));
-            float rightQuant = Float.parseFloat(Objects.requireNonNull(map.get("FUEL_RIGHT_QUANTITY")));
-            float rightCap = Float.parseFloat(Objects.requireNonNull(map.get("FUEL_RIGHT_CAPACITY")));
+        try {
+            float leftQuant = (sLeftQuant == null) || (sLeftQuant.equalsIgnoreCase("null"))
+                    ? 0 : Float.parseFloat(sLeftQuant);
+            float leftCap = (sLeftCap == null) || (sLeftCap.equalsIgnoreCase("null"))
+                    ? 0 : Float.parseFloat(sLeftCap);
+            float rightQuant = (sRightQuant == null) || (sRightQuant.equalsIgnoreCase("null"))
+                    ? 0 : Float.parseFloat(sRightQuant);
+            float rightCap = (sRightCap == null) || (sRightCap.equalsIgnoreCase("null"))
+                    ? 0 : Float.parseFloat(sRightCap);
 
             // Compute percentage and truncate by casting to integer. Don't allow division by 0
-            int iLeftFuelPercent = leftCap == 0 ? 0 : (int) (100 * leftQuant / leftCap);
-            int iRightFuelPercent = rightCap == 0 ? 0 : (int) (100 * rightQuant / rightCap);
+            int iLeftFuelPercent = (leftCap == 0) ? 0 : (int) (100 * leftQuant / leftCap);
+            int iRightFuelPercent = (rightCap == 0) ? 0 : (int) (100 * rightQuant / rightCap);
 
-
+            // Update the UI
             leftFuel.setText(String.format(Locale.US, "%.2f / %.2f", leftQuant, rightCap));
-            leftFuelPercent.setText(String.format(Locale.US, "%d", iLeftFuelPercent));
+            leftFuelPercent.setText(String.format(Locale.US, "%d%%", iLeftFuelPercent));
             leftFuelPB.setProgress(iLeftFuelPercent, true);
 
             rightFuel.setText(String.format(Locale.US, "%.2f / %.2f", rightQuant, rightCap));
-            rightFuelPercent.setText(String.format(Locale.US, "%d", iRightFuelPercent));
+            rightFuelPercent.setText(String.format(Locale.US, "%d%%", iRightFuelPercent));
             rightFuelPB.setProgress(iRightFuelPercent, true);
+        } catch (NumberFormatException e) {
+            Log.d(TAG, "Number format exception:");
+            Log.d(TAG, "  LeftQuant: " + sLeftQuant);
+            Log.d(TAG, "  LeftCap: " + sLeftCap);
+            Log.d(TAG, "  RightQuant: " + sRightQuant);
+            Log.d(TAG, "  RightCap: " + sRightCap);
         }
     }
 
+    public void updateTrimVars(HashMap<String, String> map) {
+        String sElevatorTrim = map.get(TrimVars.ELEVATOR_TRIM_PCT.name());
+        String sAileronTrim = map.get(TrimVars.AILERON_TRIM_PCT.name());
+        String sRudderTrim = map.get(TrimVars.RUDDER_TRIM_PCT.name());
+
+        try {
+            float flElevatorTrim = (sElevatorTrim == null) ? 0 : 100 * Float.parseFloat(sElevatorTrim);
+            float flAileronTrim = (sAileronTrim == null) ? 0 : 100 * Float.parseFloat(sAileronTrim);
+            float flRudderTrim = (sRudderTrim == null) ? 0 : 100 * Float.parseFloat(sRudderTrim);
+
+            // Update the UI
+            elevatorTrim.setText(String.format(Locale.US, "%.1f%%", flElevatorTrim));
+            aileronTrim.setText(String.format(Locale.US, "%.1f%%", flAileronTrim));
+            rudderTrim.setText(String.format(Locale.US, "%.1f%%", flRudderTrim));
+        } catch(NumberFormatException e){
+            Log.d(TAG, "Number format exception:");
+            Log.d(TAG, "  Elevator Trim: "+sElevatorTrim);
+            Log.d(TAG, "  Aileron Trim: "+sAileronTrim);
+            Log.d(TAG, "  Rudder Trim: "+sRudderTrim);
+        }
+    }
 }

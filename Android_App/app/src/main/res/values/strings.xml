@@ -2,4 +2,5 @@
     <string name="app_name">MSFS2020_Cockpit_Extension_App</string>
     <string name="tab_text_1">Electrical</string>
     <string name="tab_text_2">Monitor</string>
+    <string name="tab_text_3">Autopilot</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.msfs2020_cockpit_extension_app;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -12,7 +13,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3};
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     FragmentAdapter fragmentAdapter;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         tabLayout = findViewById(R.id.tab_layout);
         viewPager2 = findViewById(R.id.view_pager2);
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         // Add the tabs
         tabLayout.addTab(tabLayout.newTab().setText(TAB_TITLES[0]));
         tabLayout.addTab(tabLayout.newTab().setText(TAB_TITLES[1]));
+        tabLayout.addTab(tabLayout.newTab().setText(TAB_TITLES[2]));
 
         // Tab selected listener
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

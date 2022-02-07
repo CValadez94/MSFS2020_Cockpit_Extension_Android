@@ -32,4 +32,8 @@
         <item name="colorButtonNormal">@android:color/white</item>
         <item name="colorControlHighlight">@android:color/darker_gray</item>
     </style>
+
+    <style name="SeekBarEngine" parent="Widget.AppCompat.SeekBar">
+        <item name="trackHeight">20dp</item>
+    </style>
 </resources>

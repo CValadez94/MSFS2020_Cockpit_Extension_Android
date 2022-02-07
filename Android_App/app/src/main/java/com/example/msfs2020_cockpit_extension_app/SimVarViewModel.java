@@ -7,8 +7,7 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.HashMap;
 
-import com.example.msfs2020_cockpit_extension_app.SimVarEnums.VarCategories;
-import com.example.msfs2020_cockpit_extension_app.SimVarEnums.FuelVars;
+import com.example.msfs2020_cockpit_extension_app.SimVarEnums.*;
 
 
 public class SimVarViewModel extends ViewModel {
@@ -19,8 +18,15 @@ public class SimVarViewModel extends ViewModel {
     private HashMap<String, String> simFuelVars = new HashMap<>();
     private HashMap<String, String> simTrimVars = new HashMap<>();
 
-    public String getValue(String key) {
-        return simFuelVars.get(key);
+    public String getValue(String key, VarCategories category) {
+        switch (category) {
+            case FUEL:
+                return simFuelVars.get(key);
+            case TRIM:
+                return simTrimVars.get(key);
+            default:
+                return null;
+        }
     }
 
     public void putValue(String key, String value, VarCategories category) {
@@ -33,10 +39,22 @@ public class SimVarViewModel extends ViewModel {
                     Log.d(TAG, key + " -> pair was null, new put");
                     mldSimFuelVars.postValue(simFuelVars);
                 } else if (preValue.equals(value)) {
-                    Log.d(TAG, key + " -> same pair, not a new value");
+                    //Log.d(TAG, key + " -> same pair, not a new value");
                 } else {
                     Log.d(TAG, key + " -> pair was newly updated");
                     mldSimFuelVars.postValue(simFuelVars);
+                }
+                break;
+            case TRIM:
+                preValue = simTrimVars.put(key, value);
+                if (preValue == null) {
+                    Log.d(TAG, key + " -> pair was null, new put");
+                    mldSimTrimVars.postValue(simTrimVars);
+                } else if (preValue.equals(value)) {
+                    //Log.d(TAG, key + " -> same pair, not a new value");
+                } else {
+                    Log.d(TAG, key + " -> pair was newly updated");
+                    mldSimTrimVars.postValue(simTrimVars);
                 }
                 break;
             default:
@@ -51,11 +69,21 @@ public class SimVarViewModel extends ViewModel {
         return mldSimFuelVars;
     }
 
+    public MutableLiveData<HashMap<String, String>> getTrimVars() {
+        if (mldSimTrimVars == null) {
+            mldSimTrimVars = new MutableLiveData<>();
+        }
+        return mldSimTrimVars;
+    }
+
     public SimVarViewModel() {
         super();
 
         // Initialize the hashmaps
         for (Enum f : FuelVars.values()) {
+            simFuelVars.put(f.name(), "0");
+        }
+        for (Enum f : TrimVars.values()) {
             simFuelVars.put(f.name(), "0");
         }
     }

@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
 
-public class ElectricalFrag extends Fragment {
+public class ElectricalFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -33,7 +33,6 @@ public class ElectricalFrag extends Fragment {
         ToggleButton taxiLights = v.findViewById(R.id.btnTaxiLights);
         ToggleButton navLights = v.findViewById(R.id.btnNavLights);
         ToggleButton strobeLights = v.findViewById(R.id.btnStrobeLights);
-        ImageButton sync = v.findViewById(R.id.btnSync);
 
         masterAlternator.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -134,12 +133,6 @@ public class ElectricalFrag extends Fragment {
                 } else {
                     flask.postToFlaskServer("/event/STROBES_SET/trigger", "{\"value_to_use\":\"0\"}");
                 }
-            }
-        });
-        sync.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                flask.requestDatapoint("FLAPS_HANDLE_PERCENT");
             }
         });
 
