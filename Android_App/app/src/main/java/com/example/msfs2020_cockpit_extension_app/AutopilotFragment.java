@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 
 public class AutopilotFragment extends Fragment {
     Button autopilotToggle, headingModeToggle, altitudeHoldModeToggle, navModeToggle, approachModeToggle;
+    Button wt_CJ4_FMC_0;
 
     @Nullable
     @Override
@@ -19,11 +20,14 @@ public class AutopilotFragment extends Fragment {
         View v = inflater.inflate(R.layout.autopilot_layout, container, false);
         FlaskCalls flask = new FlaskCalls();
 
+        // Autopilot layout objects
+        // Note "wt_CJ4" refers to the Working Title Cessna CJ4 mod
         autopilotToggle = v.findViewById(R.id.btnAutoPilot);
         headingModeToggle = v.findViewById(R.id.btnAltitudeHoldMode);
         altitudeHoldModeToggle = v.findViewById(R.id.btnAltitudeHoldMode);
-        navModeToggle =v.findViewById(R.id.btnNavMode);
+        navModeToggle = v.findViewById(R.id.btnNavMode);
         approachModeToggle = v.findViewById(R.id.btnApproachMode);
+        wt_CJ4_FMC_0 = v.findViewById(R.id.btnWT_CJ4_FMC_0);
 
         // Button listeners
         autopilotToggle.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +58,12 @@ public class AutopilotFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 flask.postToFlaskServer("/event/AP_APR_HOLD/trigger", "{\"value_to_use\":\"1\"}");
+            }
+        });
+        wt_CJ4_FMC_0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flask.postToFlaskServer("/wt_cj4_event/CJ4_FMC_1_BTN_0/trigger", "{\"value_to_use\":\"0\"}");
             }
         });
 

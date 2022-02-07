@@ -1,10 +1,9 @@
 package com.example.msfs2020_cockpit_extension_app;
 
-import android.content.Intent;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
@@ -20,17 +19,18 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 public class FlaskCalls {
+    private String TAG = "FLASK_CALLS";
     private final OkHttpClient client = new OkHttpClient();
     private RequestBody requestBody;
     private MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     private String baseUrl = "http://192.168.50.39:5000/";
     private HashMap<String, String> mHashMap;
 
-    public FlaskCalls(HashMap hashMap){
+    public FlaskCalls(HashMap hashMap) {
         mHashMap = hashMap;
     }
 
-    public FlaskCalls(){
+    public FlaskCalls() {
         // Do nothing, hashmap won't be used
     }
 
@@ -51,7 +51,7 @@ public class FlaskCalls {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 e.printStackTrace();
-                System.out.println("FAILURE!");
+                Log.d(TAG, "FAILURE!");
             }
 
             @Override
@@ -61,10 +61,10 @@ public class FlaskCalls {
 
                     Headers responseHeaders = response.headers();
                     for (int i = 0, size = responseHeaders.size(); i < size; i++) {
-                        System.out.println(responseHeaders.name(i) + " : " + responseHeaders.value(i));
+                        Log.d(TAG, responseHeaders.name(i) + " : " + responseHeaders.value(i));
                     }
 
-                    System.out.println(responseBody.string());
+                    Log.d(TAG, responseBody.string());
                 }
             }
         });
@@ -88,7 +88,7 @@ public class FlaskCalls {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 e.printStackTrace();
-                System.out.println("Request failure to: " + url);
+                Log.d(TAG, "Request failure to: " + url);
             }
 
             @Override
@@ -98,9 +98,9 @@ public class FlaskCalls {
 
                     Headers responseHeaders = response.headers();
                     for (int i = 0, size = responseHeaders.size(); i < size; i++) {
-                        System.out.println(responseHeaders.name(i) + " : " + responseHeaders.value(i));
+                        Log.d(TAG, responseHeaders.name(i) + " : " + responseHeaders.value(i));
                     }
-                    System.out.println(responseBody.string());
+                    Log.d(TAG, responseBody.string());
 
                     // CRASHING HERE
                     mHashMap.put(datapoint, responseBody.string());
