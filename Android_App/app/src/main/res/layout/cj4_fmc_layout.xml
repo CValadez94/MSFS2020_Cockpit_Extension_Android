@@ -9,8 +9,8 @@
         android:id="@+id/btn_CJ4_FMC_A"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginTop="24dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         android:text="A"
         app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_B"
         app:layout_constraintHorizontal_bias="0.5"
@@ -21,7 +21,7 @@
         android:id="@+id/btn_CJ4_FMC_B"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:text="B"
         app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_C"
         app:layout_constraintHorizontal_bias="0.5"
@@ -32,7 +32,7 @@
         android:id="@+id/btn_CJ4_FMC_C"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:text="C"
         app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_D"
         app:layout_constraintHorizontal_bias="0.5"
@@ -43,7 +43,7 @@
         android:id="@+id/btn_CJ4_FMC_D"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:text="D"
         app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_E"
         app:layout_constraintHorizontal_bias="0.5"
@@ -54,7 +54,7 @@
         android:id="@+id/btn_CJ4_FMC_E"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:text="E"
         app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_F"
         app:layout_constraintHorizontal_bias="0.5"
@@ -65,8 +65,8 @@
         android:id="@+id/btn_CJ4_FMC_F"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="F"
         app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_G"
         app:layout_constraintHorizontal_bias="0.5"
@@ -86,301 +86,706 @@
 
     <Button
         android:id="@+id/btn_CJ4_FMC_H"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:text="H"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_I"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_CJ4_FMC_A" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_I"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="I"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_J"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_H"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_H" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_J"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="J"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_K"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_I"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_I" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_K"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="K"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_L"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_J"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_J" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_L"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="L"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_M"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_K"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_K" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_M"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="M"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_N"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_L"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_L" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_N"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:text="N"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_M"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_M" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_O"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:text="O"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_P"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_CJ4_FMC_H" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_P"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="P"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_Q"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_O"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_O" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_Q"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="Q"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_R"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_P"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_P" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_R"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="R"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_S"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_Q"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_Q" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_S"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="S"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_T"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_R"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_R" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_T"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="T"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_U"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_S"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_S" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_U"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:text="U"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_T"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_T" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_V"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:text="V"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_W"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_O" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_W"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="W"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_X"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_V"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_V" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_X"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="X"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_Y"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_W"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_W" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_Y"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="Y"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_Z"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_X"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_X" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_Z"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:text="Z"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_space"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_Y"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_Y" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_space"
-        android:layout_width="45dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:enabled="false"
         android:text="SP"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_DIV"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_Z"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_Z" />
 
     <Button
-        android:id="@+id/btn_CJ4_FMC_slash"
-        android:layout_width="45dp"
+        android:id="@+id/btn_CJ4_FMC_DIV"
+        android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:text="/"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_space"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_space" />
 
+    <View
+        android:id="@+id/div_alphabet"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btn_CJ4_FMC_V" />
+
     <Button
         android:id="@+id/btn_CJ4_FMC_LSK1"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:text="L1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_V" />
+        app:layout_constraintTop_toBottomOf="@+id/div_alphabet" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_LSK2"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:text="L2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_LSK1" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_LSK3"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:text="L3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_LSK2" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_LSK4"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:text="L4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_LSK3" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_LSK5"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:text="L5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_LSK4" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_LSK6"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:text="L6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_LSK5" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_RSK1"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
+        android:padding="2dp"
+        android:text="R1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_V" />
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_LSK1" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_RSK2"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
+        android:padding="2dp"
+        android:text="R2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_RSK1" />
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_LSK2" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_RSK3"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
+        android:padding="2dp"
+        android:text="R3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_RSK2" />
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_LSK3" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_RSK4"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
+        android:padding="2dp"
+        android:text="R4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_RSK3" />
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_LSK4" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_RSK5"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
+        android:padding="2dp"
+        android:text="R5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_RSK4" />
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_LSK5" />
 
     <Button
         android:id="@+id/btn_CJ4_FMC_RSK6"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
+        android:padding="2dp"
+        android:text="R6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_RSK5" />
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_LSK6" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_1"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_CJ4_FMC_4"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_2"
+        app:layout_constraintStart_toEndOf="@id/btn_CJ4_FMC_LSK1"/>
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_2"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="2"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_1"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_1" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_3"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
+        android:text="3"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_RSK1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_2"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_2" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_4"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="0dp"
+        android:text="4"
+        app:layout_constraintBottom_toTopOf="@+id/div_Numpad_Center"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_LSK2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_LSK2" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_5"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="5"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_4"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_4" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_6"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
+        android:text="6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_RSK2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_5"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_5" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_7"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:text="7"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_LSK3"
+        app:layout_constraintTop_toTopOf="@+id/div_Numpad_Center" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_8"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="8"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_7"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_7" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_9"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
+        android:text="9"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_RSK3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_8"
+        app:layout_constraintTop_toTopOf="@id/btn_CJ4_FMC_8" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_DOT"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="."
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_0"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_LSK4"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_7" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_0"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_PLUSMINUS"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_DOT"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_DOT" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_PLUSMINUS"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
+        android:text="+/-"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_RSK4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_0"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_0" />
+
+    <View
+        android:id="@+id/div_SK_Numpad"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btn_CJ4_FMC_LSK6" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_DSPL_MENU"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:padding="2dp"
+        android:text="DSPL MENU"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_CJ4_FMC_IDX"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_MFD_ADV"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_IDX"
+        app:layout_constraintTop_toTopOf="@id/btn_CJ4_FMC_IDX" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_MSG"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:text="MSG"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/div_SK_Numpad" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_IDX"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:text="IDX"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_CJ4_FMC_DIR" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_LEGS"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:padding="2dp"
+        android:text="LEGS"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_DEPARR"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_FPLN"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_FPLN" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_CLR"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="16dp"
+        android:padding="2dp"
+        android:text="CLR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_IDX" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_TUN"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:text="TUN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_FMC_IDX" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_MFD_ADV"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:padding="2dp"
+        android:text="MFD ADV"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_MFD_DATA"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_DSPL_MENU"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_DSPL_MENU" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_PERF"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:padding="2dp"
+        android:text="PERF"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_NEXTPAGE"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_DEPARR"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_FPLN" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_MFD_DATA"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:padding="2dp"
+        android:text="MFD DATA"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_PREVPAGE"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_MFD_ADV"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_MFD_ADV" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_FPLN"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:padding="2dp"
+        android:text="FPLN"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_CJ4_FMC_DIR"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_LEGS"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_DIR"
+        app:layout_constraintTop_toTopOf="@id/btn_CJ4_FMC_DIR" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_NEXTPAGE"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="16dp"
+        android:padding="2dp"
+        android:text="NEXT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_DIR" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_DIR"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:text="DIR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_CJ4_FMC_MSG" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_EXEC"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="16dp"
+        android:padding="2dp"
+        android:text="EXEC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_MSG" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_PREVPAGE"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:padding="2dp"
+        android:text="PREV"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_CLR"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_MFD_DATA"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_MFD_DATA" />
+
+    <Button
+        android:id="@+id/btn_CJ4_FMC_DEPARR"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:padding="2dp"
+        android:text="DEP ARR"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_FMC_PERF"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_CJ4_FMC_LEGS"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_FPLN" />
+
+    <View
+        android:id="@+id/div_Numpad_Center"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/div_SK_Numpad"
+        app:layout_constraintTop_toBottomOf="@id/div_alphabet" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

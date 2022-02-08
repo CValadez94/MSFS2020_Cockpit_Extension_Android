@@ -39,9 +39,13 @@ public class FlaskCalls {
     // TODO: return json response if applicable
     public void postToFlaskServer(String reqURL, String json) {
         String url = baseUrl + reqURL;
-        byte[] postData = json.getBytes(StandardCharsets.UTF_8);
 
-        requestBody = RequestBody.create(json, JSON);
+        if (json == null) {         // No request body
+            requestBody = RequestBody.create("", null);
+        } else {
+            requestBody = RequestBody.create(json, JSON);
+        }
+
         Request request = new Request.Builder()
                 .url(url)
                 .post(requestBody)
