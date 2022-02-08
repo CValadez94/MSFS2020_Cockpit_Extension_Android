@@ -26,12 +26,14 @@ public class FragmentAdapter extends FragmentStateAdapter {
                 return new MonitorFragment();
             case 2:
                 return new AutopilotFragment();
+            case 3:
+                return new CJ4_FMC_Fragment();
         }
         return new ElectricalFragment();
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 4;
     }
 }
