@@ -324,7 +324,7 @@
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_FMC_space" />
 
     <View
-        android:id="@+id/div_alphabet"
+        android:id="@id/div_alphabet"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:layout_marginTop="10dp"
@@ -785,6 +785,7 @@
         android:layout_height="5dp"
         android:background="@color/white"
         android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/div_SK_Numpad"
         app:layout_constraintTop_toBottomOf="@id/div_alphabet" />
 

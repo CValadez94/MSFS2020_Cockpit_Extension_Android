@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_MASTER_ON"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="AP ON"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_CJ4_AP_XFR_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_MASTER_OFF"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="AP DISENGAGE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_CJ4_AP_MASTER_ON" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_YD_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="YD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_CJ4_AP_BC_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_XFR_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="AP XFR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_CJ4_AP_YD_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_ALT_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="ALT"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_AP_SPEED_INC"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_AP_APPR_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_ALT_VAR_DEC"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="ALT DEC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_CJ4_AP_BC_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_ALT_VAR_INC"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="ALT INC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_CJ4_AP_APPR_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_FD_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="FD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_VS_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="VS"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_AP_VS_INC"
+        app:layout_constraintTop_toTopOf="@id/btn_CJ4_AP_FD_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_VNAV_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="VNAV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_AP_FD_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_VS_INC"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="VS INC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_CJ4_AP_FD_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_VS_DEC"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="VS DEC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_CJ4_AP_VNAV_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_SPEED_DEC"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="SPEED DEC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_CJ4_AP_HALFBANK_PRESSED"/>
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_FLC_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="FLC"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_AP_SPEED_INC"
+        app:layout_constraintTop_toTopOf="@id/btn_CJ4_AP_NAV_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_SPEED_INC"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="SPEED INC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_CJ4_AP_NAV_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_NAV_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="NAV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_AP_VNAV_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_HALFBANK_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="1/2 BANK"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_CJ4_AP_NAV_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_APPR_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="APPR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_CJ4_AP_HALFBANK_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_BC_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="B/C"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_CJ4_AP_APPR_PRESSED" />
+</androidx.constraintlayout.widget.ConstraintLayout>
