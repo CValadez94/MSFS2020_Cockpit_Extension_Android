@@ -19,11 +19,12 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 public class FlaskCalls {
+    private static FlaskCalls instance;
     private String TAG = "FLASK_CALLS";
     private final OkHttpClient client = new OkHttpClient();
     private RequestBody requestBody;
     private MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    private String baseUrl = "http://192.168.50.39:5000/";
+    private String baseUrl = "http://192.168.1.174:5000/";
     private HashMap<String, String> mHashMap;
 
     public FlaskCalls(HashMap hashMap) {
@@ -32,6 +33,13 @@ public class FlaskCalls {
 
     public FlaskCalls() {
         // Do nothing, hashmap won't be used
+    }
+
+    public static FlaskCalls getInstance() {
+        if (instance == null) {
+            instance = new FlaskCalls();
+        }
+        return instance;
     }
 
     // Send a POST to the flask server

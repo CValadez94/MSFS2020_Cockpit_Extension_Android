@@ -14,7 +14,7 @@ import androidx.viewpager2.widget.ViewPager2;
 public class MainActivity extends AppCompatActivity {
 
     private static final int[] TAB_TITLES = new int[]{
-            R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3, R.string.tab_text_4};
+            R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3, R.string.tab_text_4, R.string.tab_text_5};
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     FragmentAdapter fragmentAdapter;
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager2.setAdapter(fragmentAdapter);
 
         // Add the tabs
+        tabLayout.addTab(tabLayout.newTab().setText(TAB_TITLES[4]));
         tabLayout.addTab(tabLayout.newTab().setText(TAB_TITLES[0]));
         tabLayout.addTab(tabLayout.newTab().setText(TAB_TITLES[1]));
         tabLayout.addTab(tabLayout.newTab().setText(TAB_TITLES[2]));

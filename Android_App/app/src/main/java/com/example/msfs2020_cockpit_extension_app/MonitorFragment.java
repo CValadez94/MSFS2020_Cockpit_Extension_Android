@@ -40,7 +40,7 @@ public class MonitorFragment extends Fragment {
     private final OkHttpClient client = new OkHttpClient();
     private RequestBody requestBody;
     private MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    private String baseUrl = "http://192.168.50.39:5000/";
+    private String baseUrl = "http://192.168.1.174:5000/";
     TextView leftFuelPercent, leftFuel, rightFuelPercent, rightFuel;
     TextView elevatorTrim, aileronTrim, rudderTrim;
     ProgressBar leftFuelPB, rightFuelPB;

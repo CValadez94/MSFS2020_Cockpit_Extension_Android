@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="67baabc0-1ebe-441c-a58a-57f733dc4c04" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Android_App/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Android_App/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android_App/app/src/main/java/com/example/msfs2020_cockpit_extension_app/AutopilotFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Android_App/app/src/main/java/com/example/msfs2020_cockpit_extension_app/CJ4_AutopilotFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android_App/app/src/main/java/com/example/msfs2020_cockpit_extension_app/CJ4_FMC_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/Android_App/app/src/main/java/com/example/msfs2020_cockpit_extension_app/CJ4_FMC_Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android_App/app/src/main/java/com/example/msfs2020_cockpit_extension_app/FragmentAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Android_App/app/src/main/java/com/example/msfs2020_cockpit_extension_app/FragmentAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android_App/app/src/main/res/layout/autopilot_layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android_App/app/src/main/res/layout/cj4_autopilot_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Android_App/app/src/main/res/layout/cj4_autopilot_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android_App/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Android_App/build.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="26sgI5h98h7pNSe6qFs4QKDJQRu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="67baabc0-1ebe-441c-a58a-57f733dc4c04" name="Changes" comment="" />
+      <created>1648217633138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648217633138</updated>
+    </task>
+    <servers />
+  </component>
+</project>

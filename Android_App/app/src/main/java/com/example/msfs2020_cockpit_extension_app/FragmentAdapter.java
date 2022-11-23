@@ -20,20 +20,21 @@ public class FragmentAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position) {
-            case 0:
-                return new ElectricalFragment();
             case 1:
-                return new MonitorFragment();
+                return new ElectricalFragment();
             case 2:
-                return new AutopilotFragment();
+                return new MonitorFragment();
             case 3:
+                return new AutopilotFragment();
+            case 4:
                 return new CJ4_FMC_Fragment();
+            default:
+                return new Inibuilds_A310_Fragment();
         }
-        return new ElectricalFragment();
     }
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 5;
     }
 }

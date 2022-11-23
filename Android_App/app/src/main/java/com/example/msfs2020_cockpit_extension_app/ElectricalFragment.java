@@ -20,7 +20,7 @@ public class ElectricalFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.electrical_layout, container, false);
-        FlaskCalls flask = new FlaskCalls();
+        FlaskCalls flask = FlaskCalls.getInstance();
 
         // Set the button listeners
         ToggleButton masterAlternator = v.findViewById(R.id.btnMasterAlternator);

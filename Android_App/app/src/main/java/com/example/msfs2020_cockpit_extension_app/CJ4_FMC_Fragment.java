@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class CJ4_FMC_Fragment extends Fragment implements View.OnClickListener, View.OnLongClickListener {
-    FlaskCalls flask = new FlaskCalls();
+    FlaskCalls flask = FlaskCalls.getInstance();
 
     @Nullable
     @Override

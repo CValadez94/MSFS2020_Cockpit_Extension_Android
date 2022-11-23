@@ -18,7 +18,7 @@ public class AutopilotFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.autopilot_layout, container, false);
-        FlaskCalls flask = new FlaskCalls();
+        FlaskCalls flask = FlaskCalls.getInstance();
 
         // Autopilot layout objects
         // Note "wt_CJ4" refers to the Working Title Cessna CJ4 mod
