@@ -18,7 +18,7 @@ public class CJ4_FMC_Fragment extends Fragment implements View.OnClickListener, 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.cj4_fmc_layout, container, false);
 
-        // Autopilot layout objects
+        // Layout objects
         // Note "CJ4" refers to the Working Title Cessna CJ4 mod
         Button cj4_FMC_A = v.findViewById(R.id.btn_CJ4_FMC_A);
         Button cj4_FMC_B = v.findViewById(R.id.btn_CJ4_FMC_B);

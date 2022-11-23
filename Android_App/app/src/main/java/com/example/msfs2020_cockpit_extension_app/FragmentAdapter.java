@@ -25,7 +25,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
             case 1:
                 return new MonitorFragment();
             case 2:
-                return new AutopilotFragment();
+                return new CJ4_AutopilotFragment();
             case 3:
                 return new CJ4_FMC_Fragment();
         }

@@ -6,6 +6,38 @@
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/btn_CJ4_AP_HDG_SYNC"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="HDG SYNC"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_AP_HDG_DEC"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_AP_XFR_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_HDG_PRESSED"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="HDG"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_AP_HDG_INC"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_AP_YD_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_HDG_INC"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="HDG INC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_CJ4_AP_YD_PRESSED" />
+
+    <Button
+        android:id="@+id/btn_CJ4_AP_HDG_DEC"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:text="HDG DEC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CJ4_AP_YD_PRESSED" />
+
+    <Button
         android:id="@+id/btn_CJ4_AP_MASTER_ON"
         android:layout_width="100dp"
         android:layout_height="45dp"
@@ -42,7 +74,7 @@
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:text="ALT"
-        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_AP_SPEED_INC"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CJ4_AP_ALT_VAR_INC"
         app:layout_constraintTop_toTopOf="@+id/btn_CJ4_AP_APPR_PRESSED" />
 
     <Button
